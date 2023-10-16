@@ -1,0 +1,99 @@
+/***************************
+LANDING
+***************************/
+
+main {
+    padding-top: 0rem;;
+}
+
+header {
+    width: 100%;
+    height: 130vh;
+    background: #00071c;
+    position: relative;
+                transition: 0.5s background ease-in-out, 0.5s opacity ease-in-out;     
+}
+
+#header-text {
+box-sizing: border-box;
+    padding: 0rem 2rem 5vh 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+        overflow: hidden;
+    }
+
+#landing-nav {
+    display: none;
+}
+
+header h1, header h2{    
+    line-height: 1.5rem;
+    width: calc(100vw - 64px);
+        color: white;
+    }
+
+header h1 {
+    height: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.07rem;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+header h2 {
+    height: auto;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+header h2 a {
+    text-decoration: none;
+        color: white;
+}
+
+header h2 a:hover {
+    color: #597DDA;
+}
+
+.scroll-arrow {
+        color: white;
+        font-size:0.875rem;
+        font-weight: 400;
+        opacity: 0;
+        animation: fadeIn 0.75s ease-in-out;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+    
+            100% {
+                opacity: 0.8;
+                transform: translateY(0px);
+            }
+        }
+    
+        @keyframes type {
+            0% {
+                opacity: 0;
+                width: 0%;
+            }
+    
+            75% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
+/* END of LANDING */

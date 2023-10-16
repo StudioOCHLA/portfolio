@@ -1,0 +1,1126 @@
+/*! 
+normalize.css v1.0.1 | github.com/hargedal/normalize.css
+This document validates as CSS level 3+SVG
+
+TABLE OF CONTENT:
+
+* RESET 
+* BASE 
+* MAIN 
+* NAV 
+* HAMBURGER MENU 
+* DESKTOP MENU 
+* LANDING
+* TEXTBLOCK 
+* IMAGES
+* SCROLLING CONTAINER
+* DETAILS 
+* BUTTONS 
+* POP-UP
+* FOOTER
+
+*/
+
+/***************************
+BOX MODEL från http: //meyerweb.com/eric/tools/css/reset/ 
+***************************/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+/***************************
+RESET från http: //meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126 License: none (public domain)
+***************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display definitions - reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* END of RESET */
+
+
+/***************************
+BASE
+***************************/
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+without disabling user zoom.
+ */
+
+html {
+    font-family: karla;
+    line-height: 1.15;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+body {
+    color: #131516;
+    scroll-behavior: smooth;
+    letter-spacing: .025rem;
+}
+
+/* END of BASE */
+
+
+/***************************
+MAIN
+***************************/
+
+blockquote::before {
+    content: open-quote;
+}
+
+blockquote::after {
+    content: close-quote;
+}
+
+blockquote {
+    font-size: 1.4rem;
+    quotes: "“" "”" "‘" "’";
+}
+
+.page-content {
+    height: auto;
+    margin: 0 auto;
+    max-width: 70em;
+}
+
+.italic {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.67em 0;
+}
+
+hr {
+    border-radius: 7px 7px 7px 7px;
+    height: 3px;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.page-content>hr {
+    margin: 30px 0;
+    font-size: 1.2rem;
+}
+
+h2,
+.page-content span {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0.67em 0;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #1f1f1f;
+    font-size: 1.2rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+main {
+    padding-top: 60px;
+}
+
+p {
+    font-size: 1.2rem;
+    padding-bottom: 15px;
+    line-height: 1.3em;
+}
+
+span a {
+    color: #000000;
+    margin: 0.67em 0;
+    text-decoration: none;
+}
+
+span a:hover {
+    color: #2F0061;
+    /* A color from the "conservative 7-color palette adapted for color blindness" (Wong, B. Points of view: Color blindness. Nat Methods 8, 441 (2011). https: //doi.org/10.1038/nmeth.1618). */
+    text-decoration: underline 0.15em;
+}
+
+.max-character-width {
+    width: 42em;
+    /* Is no more than 80 characters. https: //www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html */
+}
+
+.typewriter {
+    padding: 15% 0;
+}
+
+.typewriter h1 {
+    color: #131516;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #131516;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em;
+    animation:
+        typing 3.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #131516
+    }
+}
+
+/* END of MAIN */
+
+
+/***************************
+NAV
+***************************/
+
+.logo {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #131516;
+    transition: all 0.1s ease;
+}
+
+.logo:hover {
+    color: #AA4499;
+    transform: scale(1.05);
+}
+
+.nav-left {
+    width: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+    box-sizing: border-box;
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav-right {
+    width: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10;
+    position: fixed;
+    justify-content: flex-end;
+    right: 0;
+    top: 0;
+    padding-right: 32px;
+    transition: transform 0.5s ease-in-out;
+}
+
+nav {
+    background: #e3e3e3;
+    width: 100%;
+    height: 60px;
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .hamburger-icon div {
+        width: 32px;
+        height: 3px;
+        margin: 6px 0px;
+        border-radius: 1.5px;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: 16.667%;
+        padding: 0px;
+        height: 67.5px;
+        position: fixed;
+    }
+
+    .nav-left {
+        justify-content: flex-end;
+    }
+
+    .nav-right {
+        justify-content: flex-start;
+    }
+
+    main {
+        padding-top: 67.5px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1919px) {
+
+    .nav-left,
+    .nav-right {
+        width: 8.333%;
+        padding: 0px;
+        height: 90px;
+        position: fixed;
+    }
+
+    .nav-left {
+        justify-content: flex-end;
+    }
+
+    .nav-right {
+        justify-content: flex-start;
+    }
+
+    main {
+        padding-top: 90px;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .nav-left,
+    .nav-right {
+        width: 8.333%;
+        padding: 0px;
+        height: 90px;
+        position: fixed;
+    }
+
+    .nav-left {
+        justify-content: flex-end;
+    }
+
+    .nav-right {
+        justify-content: flex-start;
+    }
+
+    main {
+        padding-top: 90px;
+    }
+}
+
+/* END of NAV */
+
+
+/***************************
+HAMBURGER MENU
+***************************/
+
+.hamburger-icon {
+    transition: all 0.1s ease;
+}
+
+.hamburger-icon div {
+    width: 38px;
+    height: 3px;
+    background-color: #131516;
+    margin: 7px 0px;
+    border-radius: 1px;
+}
+
+.hamburger-icon:hover {
+    transform: scale(1.05);
+}
+
+.hamburger-icon:hover #icon-bottom,
+.hamburger-icon:hover #icon-top {
+    background-color: #AA4499;
+}
+
+#icon-bottom,
+#icon-top {
+    transition: background-color 0.1s, transform 0.5s ease-in-out;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .hamburger-icon div {
+        width: 32px;
+        height: 3px;
+        margin: 6px 0px;
+        border-radius: 1.5px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1919px) {
+    .hamburger-icon {
+        z-index: 1;
+    }
+
+    .hamburger-icon div {
+        width: 32px;
+        height: 3px;
+        margin: 6px 0px;
+        border-radius: 1.5px;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hamburger-icon {
+        z-index: 1;
+    }
+
+    .hamburger-icon div {
+        width: 32px;
+        height: 3px;
+        margin: 6px 0px;
+        border-radius: 1.5px;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+/* END of HAMBURGER */
+
+
+/***************************
+DESKTOP MENU
+***************************/
+
+.desktop-menu {
+    width: auto;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: fixed;
+    right: calc(8vw - 53px);
+    top: 23px;
+    border-radius: 25px;
+    padding: 0px 55px 0px 7px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: #fafafa;
+    z-index: 9;
+}
+
+.desktop-menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #131516;
+    font-size: 1.2rem;
+    letter-spacing: .07rem;
+    font-weight: 400;
+    margin: 13px 15px;
+}
+
+.desktop-menu a:hover {
+    color: #56B4E9;
+}
+
+/* END of DESKTOP MENU */
+
+
+/***************************
+TEXTBLOCK
+***************************/
+
+.block1,
+.block2,
+.block3,
+.block4 {
+    padding: 40px 0px 80px 0px;
+}
+
+.textblock,
+.tripple-box {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-textblock,
+.right-textblock {
+    width: 47.222%;
+    display: grid;
+}
+
+.tripple-textblock,
+.quartet-box {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.block2 {
+    background-color: rgba(113, 121, 143, 0.07);
+}
+
+.block3,
+.note {
+    background-color: #56B4E9;
+    /* A color from the "conservative 7-color palette adapted for color blindness" (Wong, B. Points of view: Color blindness. Nat Methods 8, 441 (2011). https: //doi.org/10.1038/nmeth.1618). */
+}
+
+.block4 {
+    border-right: 3px solid #56B4E9;
+}
+
+.caption {
+    color: #71798f;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin: 5px 0;
+}
+
+.div-block-1 {
+    display: flex;
+    flex-direction: row;
+    margin: 10% 0;
+}
+
+.div-block-2 {
+    width: 30%;
+    height: 0.5px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    align-self: center;
+    order: 0;
+    flex: 1;
+    border: 2px solid #333333;
+    opacity: 1;
+}
+
+.div-block-1 h1 {
+    margin-top: 0.2rem;
+    padding-right: 2rem;
+    padding-bottom: 0.2px;
+    padding-left: 2rem;
+    align-self: auto;
+    line-height: 3em;
+    text-align: center;
+}
+
+.note {
+    font-weight: 700;
+    padding: 15px 0 5px 0;
+}
+
+.tripple-box {
+    padding: 30px 0;
+}
+
+.tripple-heading-box {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tripple-heading-box h2 {
+    padding-right: 6em;
+}
+
+.tripple-textblock,
+.tripple-img {
+    width: 30%;
+}
+
+.right {
+    justify-content: right;
+}
+
+/* END of TEXTBLOCK */
+
+
+/***************************
+IMAGES
+***************************/
+
+img:hover {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1px);
+}
+
+.float-img,
+.full-size-img,
+.half-size-img,
+.small-img {
+    box-shadow: none;
+    transition: transform .2s;
+}
+
+.float-img:hover,
+.half-size-img:hover,
+.smaller-img:hover {
+    transform: scale(2);
+}
+
+.small-img:hover,
+.tripple-textblock img:hover {
+    transform: scale(1.5);
+}
+
+.half-size-img,
+.small-img,
+.smaller-img {
+    width: auto;
+}
+
+.divider-photo img,
+.full-size-img {
+    height: auto;
+    width: 100%;
+}
+
+.divider-photo img,
+.full-size-img {
+    padding-top: 20px;
+}
+
+.float-img {
+    z-index: 3;
+    left: 1.5%;
+    top: -880px;
+    position: absolute;
+    height: 1200px;
+}
+
+.float-img:hover {
+    top: -1050px;
+    transition: ease-in;
+}
+
+.full-size-img {
+    padding: 30px 0px 0px 0px;
+}
+
+.half-size-img {
+    max-height: 400px;
+    max-width: 100%;
+}
+
+.figma-embed {
+    height: 75vh;
+    display: flex;
+}
+
+.social-icons {
+    max-height: 3rem;
+    margin-right: 2rem;
+    min-height: 21px;
+}
+
+#img_dark_background {
+    background-color: #222222;
+}
+
+iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+}
+
+
+.tripple-textblock img {
+    align-self: self-end;
+    max-height: 400px;
+    max-width: 100%;
+}
+
+.small-img {
+    max-height: 300px;
+}
+
+.smaller-img {
+    z-index: 3;
+    right: 6.5%;
+    top: 13%;
+    position: absolute;
+    max-height: 150px;
+}
+
+.smaller-img:hover {
+    top: 60px;
+}
+
+@media (max-width: 991px) {
+    .float-img {
+        display: none;
+    }
+}
+
+/* END of IMAGES */
+
+
+/***************************
+SCROLLING CONTAINER
+***************************/
+
+.hs>li,
+.item {
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: center;
+}
+
+.hs {
+    display: grid;
+    grid-template-columns: 0em;
+    grid-template-rows: minmax(150px);
+    grid-auto-flow: column;
+    grid-auto-columns: 70%;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.hs:before {
+    content: '';
+    width: 10px;
+}
+
+.item {
+    margin-right: 1rem;
+    padding: 0 0 0 1.5em;
+}
+
+.item img {
+    height: fit-content;
+    padding: 1rem;
+    width: 100%;
+}
+
+.item h2 {
+    padding: 0.5rem 0 0 0;
+}
+
+.item p {
+    line-height: 1.5rem;
+}
+
+.item img:hover {
+    height: fit-content;
+    transform: none;
+    width: 100%;
+}
+
+.scrolling-container {
+    align-content: start;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* END of SCROLLING CONTAINER */
+
+
+/***************************
+DETAILS
+***************************/
+
+.details {
+    display: block;
+    /* Add the correct display in Edge, IE 10+, and Firefox. */
+    width: 100%;
+}
+
+.details li {
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.details ul {
+    margin: 40px 0px 0px 0px;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: calc(33.333% - 16px) 66.667%;
+    grid-column-gap: 16px;
+    align-items: baseline;
+}
+
+.details-info {
+    font-weight: 400;
+}
+
+.details-label {
+    font-weight: 700;
+    color: #71798f;
+}
+
+.page-content-list li {
+    padding-bottom: 10px;
+}
+
+
+/* END of DETAILS */
+
+
+/***************************
+BUTTON
+***************************/
+
+.button,
+.small-button {
+
+    padding: 0.5em 1.7em;
+    margin: 0 0.1rem 0.1rem 0;
+    border: 0.16rem solid;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #00071c;
+    text-shadow: 0 0.04rem 0.04rem rgba(255, 255, 255, 0.253);
+    text-align: center;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: fit-content;
+    letter-spacing: 0.1rem;
+        cursor: pointer;
+}
+
+.button {
+    align-self: flex-start;
+    border: 0.16em solid rgb(17, 16, 16);
+}
+
+.button:hover,
+.small-button:hover {
+    color: rgb(255, 255, 255);
+}
+
+.button:hover {
+    background-color: rgba(34, 34, 34, .95);
+}
+
+.small-button {
+    align-self: end;
+    border: 0.16em solid #AA4499;
+    color: #AA4499;
+    margin-bottom: 1rem;
+}
+
+.small-button:hover {
+    background-color: #AA4499;
+}
+
+#arrow {
+    position: fixed;
+    bottom: 100px;
+    left: 91.667%;
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    outline: none;
+    background-color: #00071c;
+    color: #fafafa;
+    cursor: pointer;
+    border-radius: 100%;
+    font-size: 1.4em;
+    width: 30px;
+    height: 30px;
+}
+
+#arrow:hover {
+    background-color: #2D8CFF;
+}
+
+/* END of BUTTONS */
+
+
+/***************************
+FOOTER
+***************************/
+
+.contactInfo1,
+.contactInfo2,
+.contactInfo3 {
+    width: 23%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 0px;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+footer {
+    background-color: rgba(34, 34, 34, .95);
+    bottom: 0;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+}
+
+footer h3,
+footer a,
+footer p {
+    color: #e3e3e3;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+footer a {
+    text-decoration: none;
+    text-transform: none;
+}
+
+footer h3 {
+    font-weight: bold;
+}
+
+footer p {
+    font-weight: normal;
+
+}
+
+@media (max-width: 800px) {
+    footer {
+        display: none;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 991px) {
+    .footer-content {
+        width: 100%;
+        padding: 15px 12.5%;
+    }
+
+    footer h3,
+    footer a,
+    footer p {
+        line-height: 1rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1919px) {
+    footer {
+        box-sizing: border-box;
+        padding: 0px 12.5%;
+    }
+}
+
+@media (min-width: 1920px) {
+    footer {
+        box-sizing: border-box;
+        padding: 0px 12.5%;
+    }
+}
+
+/* END of FOOTER */
+
+
+
+
+
+
+
+/* FORMS */
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+input, textarea {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid rgba(113, 121, 143, 0.07);
+    padding: 0 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input {height: 40px;}
+
+input:focus, textarea:focus {
+    border: 2px solid #AA4499;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.success_text {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success_text.show {
+    display: block;
+}
+
